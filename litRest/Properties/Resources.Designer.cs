@@ -193,6 +193,26 @@ namespace litRest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money_1_ {
+            get {
+                object obj = ResourceManager.GetObject("money(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stick_man {
             get {
                 object obj = ResourceManager.GetObject("stick-man", resourceCulture);
@@ -226,6 +246,16 @@ namespace litRest.Properties {
         internal static System.Drawing.Bitmap wedding_reception {
             get {
                 object obj = ResourceManager.GetObject("wedding-reception", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap writing {
+            get {
+                object obj = ResourceManager.GetObject("writing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

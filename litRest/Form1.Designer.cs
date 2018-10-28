@@ -46,7 +46,7 @@
             this.btnUser = new System.Windows.Forms.PictureBox();
             this.btnAjustes = new System.Windows.Forms.PictureBox();
             this.btnOcultar = new System.Windows.Forms.PictureBox();
-            this.inicio1 = new litRest.inicio();
+            this.estadistica1 = new litRest.estadistica();
             this.menuVertical.SuspendLayout();
             this.barraTitulo.SuspendLayout();
             this.panelContenedor.SuspendLayout();
@@ -189,7 +189,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Controls.Add(this.inicio1);
+            this.panelContenedor.Controls.Add(this.estadistica1);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 40);
             this.panelContenedor.Name = "panelContenedor";
@@ -291,14 +291,14 @@
             this.btnOcultar.TabStop = false;
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
-            // inicio1
+            // estadistica1
             // 
-            this.inicio1.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inicio1.Location = new System.Drawing.Point(0, 0);
-            this.inicio1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inicio1.Name = "inicio1";
-            this.inicio1.Size = new System.Drawing.Size(1220, 660);
-            this.inicio1.TabIndex = 0;
+            this.estadistica1.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estadistica1.Location = new System.Drawing.Point(0, 0);
+            this.estadistica1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.estadistica1.Name = "estadistica1";
+            this.estadistica1.Size = new System.Drawing.Size(1220, 660);
+            this.estadistica1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -350,7 +350,7 @@
         private System.Windows.Forms.Label lblEstadis;
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblNavegador;
-        private inicio inicio1;
+        private estadistica estadistica1;
     }
 }
 
