@@ -65,7 +65,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ubuntu", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label2.Location = new System.Drawing.Point(146, 38);
+            this.label2.Location = new System.Drawing.Point(146, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 33);
             this.label2.TabIndex = 18;
@@ -80,7 +80,7 @@
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(109, 89);
+            this.listView1.Location = new System.Drawing.Point(109, 122);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(329, 390);
             this.listView1.TabIndex = 19;
@@ -107,7 +107,7 @@
             this.btnEliminaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminaUser.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminaUser.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEliminaUser.Location = new System.Drawing.Point(133, 496);
+            this.btnEliminaUser.Location = new System.Drawing.Point(133, 529);
             this.btnEliminaUser.Name = "btnEliminaUser";
             this.btnEliminaUser.Size = new System.Drawing.Size(123, 40);
             this.btnEliminaUser.TabIndex = 20;
@@ -122,7 +122,7 @@
             this.btnModificaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificaUser.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificaUser.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnModificaUser.Location = new System.Drawing.Point(284, 495);
+            this.btnModificaUser.Location = new System.Drawing.Point(284, 528);
             this.btnModificaUser.Name = "btnModificaUser";
             this.btnModificaUser.Size = new System.Drawing.Size(123, 40);
             this.btnModificaUser.TabIndex = 21;
@@ -132,7 +132,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.pictureBox2.Location = new System.Drawing.Point(508, 71);
+            this.pictureBox2.Location = new System.Drawing.Point(508, 104);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(5, 440);
             this.pictureBox2.TabIndex = 22;
@@ -143,7 +143,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ubuntu", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label1.Location = new System.Drawing.Point(762, 51);
+            this.label1.Location = new System.Drawing.Point(762, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 33);
             this.label1.TabIndex = 23;
@@ -154,7 +154,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label3.Location = new System.Drawing.Point(785, 216);
+            this.label3.Location = new System.Drawing.Point(785, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 24;
@@ -165,7 +165,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label4.Location = new System.Drawing.Point(780, 106);
+            this.label4.Location = new System.Drawing.Point(780, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 25;
@@ -176,7 +176,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label5.Location = new System.Drawing.Point(778, 161);
+            this.label5.Location = new System.Drawing.Point(778, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 25);
             this.label5.TabIndex = 26;
@@ -187,7 +187,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label6.Location = new System.Drawing.Point(752, 271);
+            this.label6.Location = new System.Drawing.Point(752, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 25);
             this.label6.TabIndex = 27;
@@ -198,7 +198,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label7.Location = new System.Drawing.Point(656, 326);
+            this.label7.Location = new System.Drawing.Point(656, 359);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(212, 25);
             this.label7.TabIndex = 28;
@@ -209,7 +209,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label8.Location = new System.Drawing.Point(792, 381);
+            this.label8.Location = new System.Drawing.Point(792, 414);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 25);
             this.label8.TabIndex = 29;
@@ -218,7 +218,7 @@
             // txbNombre
             // 
             this.txbNombre.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbNombre.Location = new System.Drawing.Point(874, 103);
+            this.txbNombre.Location = new System.Drawing.Point(874, 136);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(211, 30);
             this.txbNombre.TabIndex = 30;
@@ -226,7 +226,7 @@
             // txbApellido
             // 
             this.txbApellido.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbApellido.Location = new System.Drawing.Point(874, 158);
+            this.txbApellido.Location = new System.Drawing.Point(874, 191);
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(211, 30);
             this.txbApellido.TabIndex = 31;
@@ -234,7 +234,7 @@
             // txbUser
             // 
             this.txbUser.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbUser.Location = new System.Drawing.Point(874, 213);
+            this.txbUser.Location = new System.Drawing.Point(874, 246);
             this.txbUser.Name = "txbUser";
             this.txbUser.Size = new System.Drawing.Size(211, 30);
             this.txbUser.TabIndex = 32;
@@ -242,7 +242,7 @@
             // txbPassword
             // 
             this.txbPassword.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbPassword.Location = new System.Drawing.Point(874, 268);
+            this.txbPassword.Location = new System.Drawing.Point(874, 301);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(211, 30);
@@ -251,7 +251,7 @@
             // txbPassword2
             // 
             this.txbPassword2.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbPassword2.Location = new System.Drawing.Point(874, 323);
+            this.txbPassword2.Location = new System.Drawing.Point(874, 356);
             this.txbPassword2.Name = "txbPassword2";
             this.txbPassword2.PasswordChar = '*';
             this.txbPassword2.Size = new System.Drawing.Size(211, 30);
@@ -265,7 +265,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAgregar.Location = new System.Drawing.Point(783, 442);
+            this.btnAgregar.Location = new System.Drawing.Point(783, 475);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(185, 37);
             this.btnAgregar.TabIndex = 36;
@@ -279,7 +279,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Administrador",
             "Mesero"});
-            this.comboBox1.Location = new System.Drawing.Point(875, 378);
+            this.comboBox1.Location = new System.Drawing.Point(875, 411);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 33);
             this.comboBox1.TabIndex = 37;
