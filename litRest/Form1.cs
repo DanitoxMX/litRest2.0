@@ -15,12 +15,14 @@ namespace litRest
     public partial class Form1 : Form
     {
         SqlConnection conexion;
+
         public Form1()
         {
             InitializeComponent();
             //conexionSQL();
         }
-
+        public static string nombre;
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

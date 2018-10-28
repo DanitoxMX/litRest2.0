@@ -19,7 +19,7 @@ namespace litRest
             InitializeComponent();
             
         }
-
+        
         private void login_Load(object sender, EventArgs e)
         {
             txbLogUser.Text = "Usuario";
