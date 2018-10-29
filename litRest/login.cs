@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace litRest
 {
@@ -14,12 +15,30 @@ namespace litRest
     {
         string user = "";
         string pass = "";
+        SqlConnection conexion;
+        SqlDataReader lector;
+        SqlCommand query;
+
         public login()
         {
             InitializeComponent();
-            
+            conexionSQL();
         }
-        
+
+        public void conexionSQL()
+        {
+            try
+            {
+                conexion = new SqlConnection("server=DANIEL-PC; database=litrest; integrated security=true");
+                conexion.Open();
+                Console.WriteLine("Conexión establecida con base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos");
+            }
+        }
+
         private void login_Load(object sender, EventArgs e)
         {
             txbLogUser.Text = "Usuario";
@@ -105,7 +124,24 @@ namespace litRest
             }
             else
             {
+                try
+                {
+                    query = new SqlCommand("SELECT pass FROM Trabajador WHERE Usuario = \'" + txbLogUser.Text + "\'", conexion);
+                    lector = query.ExecuteReader();
+                    if(lector.GetValue(0).ToString() == txbLogPass.Text)
+                    {
+                        MessageBox.Show("Sesion activa");
+                    }
+                    else
+                        MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    lector.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
     }

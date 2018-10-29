@@ -46,10 +46,9 @@
             this.btnUser = new System.Windows.Forms.PictureBox();
             this.btnAjustes = new System.Windows.Forms.PictureBox();
             this.btnOcultar = new System.Windows.Forms.PictureBox();
-            this.productos1 = new litRest.productos();
+            this.picCursor = new System.Windows.Forms.PictureBox();
             this.menuVertical.SuspendLayout();
             this.barraTitulo.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstadis)).BeginInit();
@@ -57,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAjustes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursor)).BeginInit();
             this.SuspendLayout();
             // 
             // menuVertical
@@ -74,6 +74,7 @@
             this.menuVertical.Controls.Add(this.lblProdu);
             this.menuVertical.Controls.Add(this.lblEstadis);
             this.menuVertical.Controls.Add(this.lblInicio);
+            this.menuVertical.Controls.Add(this.picCursor);
             this.menuVertical.Dock = System.Windows.Forms.DockStyle.Right;
             this.menuVertical.Location = new System.Drawing.Point(1220, 0);
             this.menuVertical.Name = "menuVertical";
@@ -91,6 +92,7 @@
             this.lblAjustes.Size = new System.Drawing.Size(61, 20);
             this.lblAjustes.TabIndex = 2;
             this.lblAjustes.Text = "Ajustes";
+            this.lblAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             this.lblAjustes.MouseEnter += new System.EventHandler(this.btnAjustes_MouseEnter_1);
             this.lblAjustes.MouseLeave += new System.EventHandler(this.btnAjustes_MouseLeave);
             // 
@@ -105,6 +107,7 @@
             this.lblUser.Size = new System.Drawing.Size(70, 20);
             this.lblUser.TabIndex = 5;
             this.lblUser.Text = "Usuarios";
+            this.lblUser.Click += new System.EventHandler(this.btnUser_Click);
             this.lblUser.MouseEnter += new System.EventHandler(this.btnUser_MouseEnter);
             this.lblUser.MouseLeave += new System.EventHandler(this.lblUser_MouseLeave);
             // 
@@ -119,6 +122,7 @@
             this.lblProdu.Size = new System.Drawing.Size(84, 20);
             this.lblProdu.TabIndex = 6;
             this.lblProdu.Text = "Productos";
+            this.lblProdu.Click += new System.EventHandler(this.btnProdu_Click);
             this.lblProdu.MouseEnter += new System.EventHandler(this.btnProdu_MouseEnter);
             this.lblProdu.MouseLeave += new System.EventHandler(this.btnProdu_MouseLeave);
             // 
@@ -133,6 +137,7 @@
             this.lblEstadis.Size = new System.Drawing.Size(90, 20);
             this.lblEstadis.TabIndex = 7;
             this.lblEstadis.Text = "Estadisticas";
+            this.lblEstadis.Click += new System.EventHandler(this.btnEstadis_Click);
             this.lblEstadis.MouseEnter += new System.EventHandler(this.btnEstadis_MouseEnter);
             this.lblEstadis.MouseLeave += new System.EventHandler(this.btnEstadis_MouseLeave);
             // 
@@ -147,6 +152,7 @@
             this.lblInicio.Size = new System.Drawing.Size(45, 20);
             this.lblInicio.TabIndex = 8;
             this.lblInicio.Text = "Inicio";
+            this.lblInicio.Click += new System.EventHandler(this.btnInicio_Click);
             this.lblInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
             this.lblInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
@@ -189,7 +195,6 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Controls.Add(this.productos1);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 40);
             this.panelContenedor.Name = "panelContenedor";
@@ -220,6 +225,7 @@
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnInicio.TabIndex = 4;
             this.btnInicio.TabStop = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
             this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
@@ -234,6 +240,7 @@
             this.btnEstadis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEstadis.TabIndex = 2;
             this.btnEstadis.TabStop = false;
+            this.btnEstadis.Click += new System.EventHandler(this.btnEstadis_Click);
             this.btnEstadis.MouseEnter += new System.EventHandler(this.btnEstadis_MouseEnter);
             this.btnEstadis.MouseLeave += new System.EventHandler(this.btnEstadis_MouseLeave);
             // 
@@ -248,6 +255,7 @@
             this.btnProdu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnProdu.TabIndex = 3;
             this.btnProdu.TabStop = false;
+            this.btnProdu.Click += new System.EventHandler(this.btnProdu_Click);
             this.btnProdu.MouseEnter += new System.EventHandler(this.btnProdu_MouseEnter);
             this.btnProdu.MouseLeave += new System.EventHandler(this.btnProdu_MouseLeave);
             // 
@@ -262,6 +270,7 @@
             this.btnUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnUser.TabIndex = 2;
             this.btnUser.TabStop = false;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             this.btnUser.MouseEnter += new System.EventHandler(this.btnUser_MouseEnter);
             this.btnUser.MouseLeave += new System.EventHandler(this.lblUser_MouseLeave);
             // 
@@ -276,6 +285,7 @@
             this.btnAjustes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAjustes.TabIndex = 1;
             this.btnAjustes.TabStop = false;
+            this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             this.btnAjustes.MouseEnter += new System.EventHandler(this.btnAjustes_MouseEnter_1);
             this.btnAjustes.MouseLeave += new System.EventHandler(this.btnAjustes_MouseLeave);
             // 
@@ -291,14 +301,14 @@
             this.btnOcultar.TabStop = false;
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
-            // productos1
+            // picCursor
             // 
-            this.productos1.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productos1.Location = new System.Drawing.Point(0, 0);
-            this.productos1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.productos1.Name = "productos1";
-            this.productos1.Size = new System.Drawing.Size(1220, 660);
-            this.productos1.TabIndex = 0;
+            this.picCursor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
+            this.picCursor.Location = new System.Drawing.Point(0, 230);
+            this.picCursor.Name = "picCursor";
+            this.picCursor.Size = new System.Drawing.Size(5, 65);
+            this.picCursor.TabIndex = 0;
+            this.picCursor.TabStop = false;
             // 
             // Form1
             // 
@@ -319,7 +329,6 @@
             this.menuVertical.PerformLayout();
             this.barraTitulo.ResumeLayout(false);
             this.barraTitulo.PerformLayout();
-            this.panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEstadis)).EndInit();
@@ -327,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAjustes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,7 +360,7 @@
         private System.Windows.Forms.Label lblEstadis;
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblNavegador;
-        private productos productos1;
+        private System.Windows.Forms.PictureBox picCursor;
     }
 }
 

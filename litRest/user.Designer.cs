@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            "Daniel",
-            "Mesero"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            "asdasd"}, -1);
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsUsers = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEliminaUser = new System.Windows.Forms.Button();
             this.btnModificaUser = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,8 +47,13 @@
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbPassword2 = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,21 +68,18 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Usuarios Registrados";
             // 
-            // listView1
+            // lsUsers
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lsUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(109, 122);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(329, 390);
-            this.listView1.TabIndex = 19;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lsUsers.Location = new System.Drawing.Point(109, 122);
+            this.lsUsers.Name = "lsUsers";
+            this.lsUsers.Size = new System.Drawing.Size(329, 390);
+            this.lsUsers.TabIndex = 19;
+            this.lsUsers.UseCompatibleStateImageBehavior = false;
+            this.lsUsers.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader2
             // 
@@ -128,15 +122,6 @@
             this.btnModificaUser.TabIndex = 21;
             this.btnModificaUser.Text = "Modificar";
             this.btnModificaUser.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.pictureBox2.Location = new System.Drawing.Point(508, 104);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(5, 440);
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -219,6 +204,7 @@
             // 
             this.txbNombre.Font = new System.Drawing.Font("Ubuntu", 15F);
             this.txbNombre.Location = new System.Drawing.Point(874, 136);
+            this.txbNombre.MaxLength = 20;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(211, 30);
             this.txbNombre.TabIndex = 30;
@@ -227,6 +213,7 @@
             // 
             this.txbApellido.Font = new System.Drawing.Font("Ubuntu", 15F);
             this.txbApellido.Location = new System.Drawing.Point(874, 191);
+            this.txbApellido.MaxLength = 20;
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(211, 30);
             this.txbApellido.TabIndex = 31;
@@ -234,7 +221,9 @@
             // txbUser
             // 
             this.txbUser.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txbUser.Location = new System.Drawing.Point(874, 246);
+            this.txbUser.MaxLength = 10;
             this.txbUser.Name = "txbUser";
             this.txbUser.Size = new System.Drawing.Size(211, 30);
             this.txbUser.TabIndex = 32;
@@ -271,19 +260,20 @@
             this.btnAgregar.TabIndex = 36;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // comboBox1
+            // cbPuesto
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPuesto.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.cbPuesto.FormattingEnabled = true;
+            this.cbPuesto.Items.AddRange(new object[] {
             "Administrador",
             "Mesero"});
-            this.comboBox1.Location = new System.Drawing.Point(875, 411);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 33);
-            this.comboBox1.TabIndex = 37;
-            this.comboBox1.Text = "Seleccionar...";
+            this.cbPuesto.Location = new System.Drawing.Point(875, 411);
+            this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.Size = new System.Drawing.Size(210, 33);
+            this.cbPuesto.TabIndex = 37;
+            this.cbPuesto.Text = "Seleccionar...";
             // 
             // columnHeader4
             // 
@@ -291,11 +281,43 @@
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 118;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Location = new System.Drawing.Point(445, 122);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(25, 25);
+            this.panel1.TabIndex = 38;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Image = global::litRest.Properties.Resources.reload;
+            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(25, 25);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRefresh.TabIndex = 39;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
+            this.pictureBox2.Location = new System.Drawing.Point(508, 104);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(5, 440);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbPuesto);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txbPassword2);
             this.Controls.Add(this.txbPassword);
@@ -312,12 +334,14 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnModificaUser);
             this.Controls.Add(this.btnEliminaUser);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lsUsers);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "user";
             this.Size = new System.Drawing.Size(1220, 660);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -327,7 +351,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsUsers;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnEliminaUser;
@@ -346,7 +370,9 @@
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.TextBox txbPassword2;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPuesto;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnRefresh;
     }
 }

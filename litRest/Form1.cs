@@ -14,12 +14,9 @@ namespace litRest
 {
     public partial class Form1 : Form
     {
-        SqlConnection conexion;
-
         public Form1()
         {
             InitializeComponent();
-            //conexionSQL();
         }
         public static string nombre;
         
@@ -27,20 +24,6 @@ namespace litRest
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        public void conexionSQL()
-        {
-            try
-            {
-                conexion = new SqlConnection("server=DANIEL-PC; database=litrest; integrated security=true");
-                conexion.Close();
-                Console.WriteLine("Conexión establecida con base de datos");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al conectar con la base de datos");
-            }
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -147,6 +130,40 @@ namespace litRest
             btnInicio.Location = new Point(btnInicio.Location.X + 3, btnInicio.Location.Y + 3);
             lblInicio.Location = new Point(lblInicio.Location.X, lblInicio.Location.Y - 3);
             lblInicio.Font = new Font(lblInicio.Font.Name, lblInicio.Font.SizeInPoints, FontStyle.Regular);
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            lblNavegador.Text = "Inicio >";
+            picCursor.Location = new Point(0, 131);
+        }
+
+        private void btnEstadis_Click(object sender, EventArgs e)
+        {
+            lblNavegador.Text = "Estadisticas >";
+            picCursor.Location = new Point(0, 230);
+        }
+
+        private void btnProdu_Click(object sender, EventArgs e)
+        {
+            lblNavegador.Text = "Productos >";
+            picCursor.Location = new Point(0, 329);
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            lblNavegador.Text = "Usuarios >";
+            picCursor.Location = new Point(0, 420);
+        }
+
+        private void btnAjustes_Click(object sender, EventArgs e)
+        {
+            lblNavegador.Text = "Ajustes >";
+        }
+
+        private void sobreCual()
+        {
+            
         }
     }
 }
