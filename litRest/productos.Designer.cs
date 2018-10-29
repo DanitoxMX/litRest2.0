@@ -45,10 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.cbTipo1 = new System.Windows.Forms.ComboBox();
             this.cbDispo1 = new System.Windows.Forms.ComboBox();
             this.txbDec1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,15 +54,13 @@
             this.pnlModifica = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txbdec2 = new System.Windows.Forms.TextBox();
+            this.cbDispo2 = new System.Windows.Forms.ComboBox();
+            this.btnAgrega2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbPrecio2 = new System.Windows.Forms.TextBox();
+            this.txbNombre2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -91,30 +87,31 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 62;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Producto";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 197;
+            this.columnHeader2.Width = 250;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Precio";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 131;
+            this.columnHeader3.Width = 176;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Tipo";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 128;
+            this.columnHeader4.Width = 0;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Disponibilidad";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 116;
+            this.columnHeader5.Width = 158;
             // 
             // label3
             // 
@@ -188,10 +185,8 @@
             this.pnlNuevo.Controls.Add(this.label8);
             this.pnlNuevo.Controls.Add(this.txbDec1);
             this.pnlNuevo.Controls.Add(this.cbDispo1);
-            this.pnlNuevo.Controls.Add(this.cbTipo1);
             this.pnlNuevo.Controls.Add(this.btnAgregar);
             this.pnlNuevo.Controls.Add(this.label7);
-            this.pnlNuevo.Controls.Add(this.label6);
             this.pnlNuevo.Controls.Add(this.label2);
             this.pnlNuevo.Controls.Add(this.txbPrecio1);
             this.pnlNuevo.Controls.Add(this.txbNombre1);
@@ -205,7 +200,7 @@
             // txbPrecio1
             // 
             this.txbPrecio1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbPrecio1.Location = new System.Drawing.Point(161, 123);
+            this.txbPrecio1.Location = new System.Drawing.Point(161, 148);
             this.txbPrecio1.Name = "txbPrecio1";
             this.txbPrecio1.Size = new System.Drawing.Size(79, 30);
             this.txbPrecio1.TabIndex = 35;
@@ -213,7 +208,7 @@
             // txbNombre1
             // 
             this.txbNombre1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbNombre1.Location = new System.Drawing.Point(161, 68);
+            this.txbNombre1.Location = new System.Drawing.Point(161, 74);
             this.txbNombre1.Name = "txbNombre1";
             this.txbNombre1.Size = new System.Drawing.Size(211, 30);
             this.txbNombre1.TabIndex = 34;
@@ -223,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label5.Location = new System.Drawing.Point(84, 126);
+            this.label5.Location = new System.Drawing.Point(84, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 25);
             this.label5.TabIndex = 33;
@@ -234,7 +229,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label4.Location = new System.Drawing.Point(67, 71);
+            this.label4.Location = new System.Drawing.Point(67, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 32;
@@ -250,17 +245,6 @@
             this.label2.Size = new System.Drawing.Size(214, 33);
             this.label2.TabIndex = 27;
             this.label2.Text = "Nuevo producto";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label6.Location = new System.Drawing.Point(103, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 25);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Tipo";
             // 
             // label7
             // 
@@ -289,22 +273,6 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // cbTipo1
-            // 
-            this.cbTipo1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.cbTipo1.FormattingEnabled = true;
-            this.cbTipo1.Items.AddRange(new object[] {
-            "Rollo",
-            "Platillo",
-            "Bebida",
-            "Entrada",
-            "Postre"});
-            this.cbTipo1.Location = new System.Drawing.Point(161, 178);
-            this.cbTipo1.Name = "cbTipo1";
-            this.cbTipo1.Size = new System.Drawing.Size(210, 33);
-            this.cbTipo1.TabIndex = 39;
-            this.cbTipo1.Text = "Seleccionar...";
-            // 
             // cbDispo1
             // 
             this.cbDispo1.Font = new System.Drawing.Font("Ubuntu", 15F);
@@ -321,7 +289,7 @@
             // txbDec1
             // 
             this.txbDec1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbDec1.Location = new System.Drawing.Point(269, 123);
+            this.txbDec1.Location = new System.Drawing.Point(269, 148);
             this.txbDec1.Name = "txbDec1";
             this.txbDec1.Size = new System.Drawing.Size(79, 30);
             this.txbDec1.TabIndex = 41;
@@ -331,7 +299,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label8.Location = new System.Drawing.Point(246, 128);
+            this.label8.Location = new System.Drawing.Point(246, 153);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 25);
             this.label8.TabIndex = 42;
@@ -342,7 +310,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label9.Location = new System.Drawing.Point(354, 128);
+            this.label9.Location = new System.Drawing.Point(354, 153);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 25);
             this.label9.TabIndex = 43;
@@ -352,15 +320,13 @@
             // 
             this.pnlModifica.Controls.Add(this.label10);
             this.pnlModifica.Controls.Add(this.label11);
-            this.pnlModifica.Controls.Add(this.textBox1);
-            this.pnlModifica.Controls.Add(this.comboBox3);
-            this.pnlModifica.Controls.Add(this.comboBox4);
-            this.pnlModifica.Controls.Add(this.button1);
+            this.pnlModifica.Controls.Add(this.txbdec2);
+            this.pnlModifica.Controls.Add(this.cbDispo2);
+            this.pnlModifica.Controls.Add(this.btnAgrega2);
             this.pnlModifica.Controls.Add(this.label12);
-            this.pnlModifica.Controls.Add(this.label13);
             this.pnlModifica.Controls.Add(this.label14);
-            this.pnlModifica.Controls.Add(this.textBox3);
-            this.pnlModifica.Controls.Add(this.textBox4);
+            this.pnlModifica.Controls.Add(this.txbPrecio2);
+            this.pnlModifica.Controls.Add(this.txbNombre2);
             this.pnlModifica.Controls.Add(this.label15);
             this.pnlModifica.Controls.Add(this.label16);
             this.pnlModifica.Location = new System.Drawing.Point(742, 219);
@@ -374,7 +340,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label10.Location = new System.Drawing.Point(354, 128);
+            this.label10.Location = new System.Drawing.Point(354, 148);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 25);
             this.label10.TabIndex = 43;
@@ -385,63 +351,48 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label11.Location = new System.Drawing.Point(246, 128);
+            this.label11.Location = new System.Drawing.Point(246, 148);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 25);
             this.label11.TabIndex = 42;
             this.label11.Text = ".";
             // 
-            // textBox1
+            // txbdec2
             // 
-            this.textBox1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.textBox1.Location = new System.Drawing.Point(269, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 30);
-            this.textBox1.TabIndex = 41;
+            this.txbdec2.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbdec2.Location = new System.Drawing.Point(269, 143);
+            this.txbdec2.Name = "txbdec2";
+            this.txbdec2.Size = new System.Drawing.Size(79, 30);
+            this.txbdec2.TabIndex = 41;
             // 
-            // comboBox3
+            // cbDispo2
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbDispo2.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.cbDispo2.FormattingEnabled = true;
+            this.cbDispo2.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.comboBox3.Location = new System.Drawing.Point(161, 233);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(210, 33);
-            this.comboBox3.TabIndex = 40;
-            this.comboBox3.Text = "Seleccionar...";
+            this.cbDispo2.Location = new System.Drawing.Point(161, 233);
+            this.cbDispo2.Name = "cbDispo2";
+            this.cbDispo2.Size = new System.Drawing.Size(210, 33);
+            this.cbDispo2.TabIndex = 40;
+            this.cbDispo2.Text = "Seleccionar...";
             // 
-            // comboBox4
+            // btnAgrega2
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Rollo",
-            "Platillo",
-            "Bebida",
-            "Entrada",
-            "Postre"});
-            this.comboBox4.Location = new System.Drawing.Point(161, 178);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(210, 33);
-            this.comboBox4.TabIndex = 39;
-            this.comboBox4.Text = "Seleccionar...";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(130, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 37);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAgrega2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAgrega2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgrega2.FlatAppearance.BorderSize = 0;
+            this.btnAgrega2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgrega2.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgrega2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAgrega2.Location = new System.Drawing.Point(130, 294);
+            this.btnAgrega2.Name = "btnAgrega2";
+            this.btnAgrega2.Size = new System.Drawing.Size(185, 37);
+            this.btnAgrega2.TabIndex = 38;
+            this.btnAgrega2.Text = "Modificar";
+            this.btnAgrega2.UseVisualStyleBackColor = false;
+            this.btnAgrega2.Click += new System.EventHandler(this.btnAgrega2_Click);
             // 
             // label12
             // 
@@ -454,17 +405,6 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "Disponibilidad";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label13.Location = new System.Drawing.Point(103, 181);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 25);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Tipo";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -476,28 +416,28 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Modificar producto";
             // 
-            // textBox3
+            // txbPrecio2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.textBox3.Location = new System.Drawing.Point(161, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 30);
-            this.textBox3.TabIndex = 35;
+            this.txbPrecio2.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbPrecio2.Location = new System.Drawing.Point(161, 143);
+            this.txbPrecio2.Name = "txbPrecio2";
+            this.txbPrecio2.Size = new System.Drawing.Size(79, 30);
+            this.txbPrecio2.TabIndex = 35;
             // 
-            // textBox4
+            // txbNombre2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.textBox4.Location = new System.Drawing.Point(161, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(211, 30);
-            this.textBox4.TabIndex = 34;
+            this.txbNombre2.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbNombre2.Location = new System.Drawing.Point(161, 68);
+            this.txbNombre2.Name = "txbNombre2";
+            this.txbNombre2.Size = new System.Drawing.Size(211, 30);
+            this.txbNombre2.TabIndex = 34;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Ubuntu", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.label15.Location = new System.Drawing.Point(84, 126);
+            this.label15.Location = new System.Drawing.Point(84, 146);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 25);
             this.label15.TabIndex = 33;
@@ -528,7 +468,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pnlNuevo);
             this.Controls.Add(this.btnNuevoPro);
             this.Controls.Add(this.btnModificaPro);
             this.Controls.Add(this.btnEliminaPro);
@@ -536,6 +475,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lsProduc);
             this.Controls.Add(this.pnlModifica);
+            this.Controls.Add(this.pnlNuevo);
             this.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "productos";
@@ -567,11 +507,9 @@
         private System.Windows.Forms.TextBox txbNombre1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox cbTipo1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txbDec1;
@@ -580,15 +518,13 @@
         private System.Windows.Forms.Panel pnlModifica;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txbdec2;
+        private System.Windows.Forms.ComboBox cbDispo2;
+        private System.Windows.Forms.Button btnAgrega2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbPrecio2;
+        private System.Windows.Forms.TextBox txbNombre2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
     }

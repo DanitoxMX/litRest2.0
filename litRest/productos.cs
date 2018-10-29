@@ -56,6 +56,12 @@ namespace litRest
                 {
                     pnlNuevo.Visible = false;
                     pnlModifica.Visible = true;
+                    query = new SqlCommand("SELECT Producto FROM Producto WHERE idProducto = \'" + txbIdProd.Text
+                        + "\'", conexion);
+                    lector = query.ExecuteReader();
+                    lector.Read();
+                    txbNombre2.Text = lector.GetValue(0).ToString();
+                    
                 }
                 else
                 {
@@ -122,8 +128,7 @@ namespace litRest
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txbNombre1.TextLength == 0 || txbPrecio1.TextLength == 0 || txbDec1.TextLength == 0 || cbDispo1.Text == "Seleccionar..."
-                || cbTipo1.Text == "Seleccionar...")
+            if(txbNombre1.TextLength == 0 || txbPrecio1.TextLength == 0 || txbDec1.TextLength == 0 || cbDispo1.Text == "Seleccionar...")
             {
                 MessageBox.Show("Rellena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -168,6 +173,32 @@ namespace litRest
                     MessageBox.Show("ID del producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void btnAgrega2_Click(object sender, EventArgs e)
+        {
+            if (txbNombre2.TextLength == 0 || txbPrecio2.TextLength == 0 || txbdec2.TextLength == 0 || cbDispo2.Text == "Seleccionar...")
+            {
+                MessageBox.Show("Rellena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                float precio = Convert.ToInt16(txbPrecio2.Text) + (Convert.ToInt16(txbdec2.Text) / 100);
+                bool disp = false;
+
+                if (cbDispo2.Text == "Si")
+                    disp = true;
+                else
+                    disp = false;
+
+                query = new SqlCommand("UPDATE Producto SET Producto = \'" + txbNombre2.Text + "\', Precio = \'" + precio.ToString() + "\', " +
+                    "Disponible = \'" + disp + "\' WHERE idProducto = \'" + txbIdProd.Text + "\'", conexion);
+                lector = query.ExecuteReader();
+
+                lector.Close();
+                MessageBox.Show("Producto modificado correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                refresh();
             }
         }
     }
