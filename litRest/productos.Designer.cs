@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsProduc = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,20 +40,19 @@
             this.btnEliminaPro = new System.Windows.Forms.Button();
             this.btnNuevoPro = new System.Windows.Forms.Button();
             this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.txbApellido = new System.Windows.Forms.TextBox();
-            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.txbPrecio1 = new System.Windows.Forms.TextBox();
+            this.txbNombre1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbTipo1 = new System.Windows.Forms.ComboBox();
+            this.cbDispo1 = new System.Windows.Forms.ComboBox();
+            this.txbDec1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnlModifica = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -68,25 +67,26 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnlNuevo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlModifica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // lsProduc
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lsProduc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listView1.Location = new System.Drawing.Point(41, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(650, 571);
-            this.listView1.TabIndex = 15;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lsProduc.Location = new System.Drawing.Point(41, 30);
+            this.lsProduc.Name = "lsProduc";
+            this.lsProduc.Size = new System.Drawing.Size(650, 571);
+            this.lsProduc.TabIndex = 15;
+            this.lsProduc.UseCompatibleStateImageBehavior = false;
+            this.lsProduc.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -149,6 +149,7 @@
             this.btnModificaPro.TabIndex = 24;
             this.btnModificaPro.Text = "Modificar";
             this.btnModificaPro.UseVisualStyleBackColor = false;
+            this.btnModificaPro.Click += new System.EventHandler(this.btnModificaPro_Click);
             // 
             // btnEliminaPro
             // 
@@ -164,6 +165,7 @@
             this.btnEliminaPro.TabIndex = 23;
             this.btnEliminaPro.Text = "Eliminar";
             this.btnEliminaPro.UseVisualStyleBackColor = false;
+            this.btnEliminaPro.Click += new System.EventHandler(this.btnEliminaPro_Click);
             // 
             // btnNuevoPro
             // 
@@ -178,20 +180,21 @@
             this.btnNuevoPro.TabIndex = 25;
             this.btnNuevoPro.Text = "Nuevo producto";
             this.btnNuevoPro.UseVisualStyleBackColor = false;
+            this.btnNuevoPro.Click += new System.EventHandler(this.btnNuevoPro_Click);
             // 
             // pnlNuevo
             // 
             this.pnlNuevo.Controls.Add(this.label9);
             this.pnlNuevo.Controls.Add(this.label8);
-            this.pnlNuevo.Controls.Add(this.textBox2);
-            this.pnlNuevo.Controls.Add(this.comboBox2);
-            this.pnlNuevo.Controls.Add(this.comboBox1);
+            this.pnlNuevo.Controls.Add(this.txbDec1);
+            this.pnlNuevo.Controls.Add(this.cbDispo1);
+            this.pnlNuevo.Controls.Add(this.cbTipo1);
             this.pnlNuevo.Controls.Add(this.btnAgregar);
             this.pnlNuevo.Controls.Add(this.label7);
             this.pnlNuevo.Controls.Add(this.label6);
             this.pnlNuevo.Controls.Add(this.label2);
-            this.pnlNuevo.Controls.Add(this.txbApellido);
-            this.pnlNuevo.Controls.Add(this.txbNombre);
+            this.pnlNuevo.Controls.Add(this.txbPrecio1);
+            this.pnlNuevo.Controls.Add(this.txbNombre1);
             this.pnlNuevo.Controls.Add(this.label5);
             this.pnlNuevo.Controls.Add(this.label4);
             this.pnlNuevo.Location = new System.Drawing.Point(742, 216);
@@ -199,21 +202,21 @@
             this.pnlNuevo.Size = new System.Drawing.Size(436, 366);
             this.pnlNuevo.TabIndex = 26;
             // 
-            // txbApellido
+            // txbPrecio1
             // 
-            this.txbApellido.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbApellido.Location = new System.Drawing.Point(161, 123);
-            this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(79, 30);
-            this.txbApellido.TabIndex = 35;
+            this.txbPrecio1.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbPrecio1.Location = new System.Drawing.Point(161, 123);
+            this.txbPrecio1.Name = "txbPrecio1";
+            this.txbPrecio1.Size = new System.Drawing.Size(79, 30);
+            this.txbPrecio1.TabIndex = 35;
             // 
-            // txbNombre
+            // txbNombre1
             // 
-            this.txbNombre.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.txbNombre.Location = new System.Drawing.Point(161, 68);
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(211, 30);
-            this.txbNombre.TabIndex = 34;
+            this.txbNombre1.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbNombre1.Location = new System.Drawing.Point(161, 68);
+            this.txbNombre1.Name = "txbNombre1";
+            this.txbNombre1.Size = new System.Drawing.Size(211, 30);
+            this.txbNombre1.TabIndex = 34;
             // 
             // label5
             // 
@@ -284,43 +287,44 @@
             this.btnAgregar.TabIndex = 38;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // comboBox1
+            // cbTipo1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipo1.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.cbTipo1.FormattingEnabled = true;
+            this.cbTipo1.Items.AddRange(new object[] {
             "Rollo",
             "Platillo",
             "Bebida",
             "Entrada",
             "Postre"});
-            this.comboBox1.Location = new System.Drawing.Point(161, 178);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 33);
-            this.comboBox1.TabIndex = 39;
-            this.comboBox1.Text = "Seleccionar...";
+            this.cbTipo1.Location = new System.Drawing.Point(161, 178);
+            this.cbTipo1.Name = "cbTipo1";
+            this.cbTipo1.Size = new System.Drawing.Size(210, 33);
+            this.cbTipo1.TabIndex = 39;
+            this.cbTipo1.Text = "Seleccionar...";
             // 
-            // comboBox2
+            // cbDispo1
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbDispo1.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.cbDispo1.FormattingEnabled = true;
+            this.cbDispo1.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.comboBox2.Location = new System.Drawing.Point(161, 233);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 33);
-            this.comboBox2.TabIndex = 40;
-            this.comboBox2.Text = "Seleccionar...";
+            this.cbDispo1.Location = new System.Drawing.Point(161, 233);
+            this.cbDispo1.Name = "cbDispo1";
+            this.cbDispo1.Size = new System.Drawing.Size(210, 33);
+            this.cbDispo1.TabIndex = 40;
+            this.cbDispo1.Text = "Seleccionar...";
             // 
-            // textBox2
+            // txbDec1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Ubuntu", 15F);
-            this.textBox2.Location = new System.Drawing.Point(269, 123);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 30);
-            this.textBox2.TabIndex = 41;
+            this.txbDec1.Font = new System.Drawing.Font("Ubuntu", 15F);
+            this.txbDec1.Location = new System.Drawing.Point(269, 123);
+            this.txbDec1.Name = "txbDec1";
+            this.txbDec1.Size = new System.Drawing.Size(79, 30);
+            this.txbDec1.TabIndex = 41;
             // 
             // label8
             // 
@@ -343,15 +347,6 @@
             this.label9.Size = new System.Drawing.Size(58, 25);
             this.label9.TabIndex = 43;
             this.label9.Text = "MXN";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
-            this.pictureBox5.Location = new System.Drawing.Point(732, 189);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(449, 5);
-            this.pictureBox5.TabIndex = 55;
-            this.pictureBox5.TabStop = false;
             // 
             // pnlModifica
             // 
@@ -519,6 +514,15 @@
             this.label16.TabIndex = 32;
             this.label16.Text = "Nombre";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
+            this.pictureBox5.Location = new System.Drawing.Point(732, 189);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(449, 5);
+            this.pictureBox5.TabIndex = 55;
+            this.pictureBox5.TabStop = false;
+            // 
             // productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -530,7 +534,7 @@
             this.Controls.Add(this.btnEliminaPro);
             this.Controls.Add(this.txbIdProd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lsProduc);
             this.Controls.Add(this.pnlModifica);
             this.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -538,16 +542,16 @@
             this.Size = new System.Drawing.Size(1220, 660);
             this.pnlNuevo.ResumeLayout(false);
             this.pnlNuevo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlModifica.ResumeLayout(false);
             this.pnlModifica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsProduc;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -559,19 +563,19 @@
         private System.Windows.Forms.Button btnEliminaPro;
         private System.Windows.Forms.Button btnNuevoPro;
         private System.Windows.Forms.Panel pnlNuevo;
-        private System.Windows.Forms.TextBox txbApellido;
-        private System.Windows.Forms.TextBox txbNombre;
+        private System.Windows.Forms.TextBox txbPrecio1;
+        private System.Windows.Forms.TextBox txbNombre1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipo1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txbDec1;
+        private System.Windows.Forms.ComboBox cbDispo1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel pnlModifica;
         private System.Windows.Forms.Label label10;

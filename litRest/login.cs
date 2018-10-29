@@ -124,25 +124,56 @@ namespace litRest
             }
             else
             {
-                try
+                if (verifica(txbLogUser.Text))
                 {
-                    query = new SqlCommand("SELECT pass FROM Trabajador WHERE Usuario = \'" + txbLogUser.Text + "\'", conexion);
-                    lector = query.ExecuteReader();
-                    if(lector.GetValue(0).ToString() == txbLogPass.Text)
+                    try
                     {
-                        MessageBox.Show("Sesion activa");
+                        query = new SqlCommand("SELECT pass FROM Trabajador WHERE Usuario = \'" + txbLogUser.Text + "\'", conexion);
+                        lector = query.ExecuteReader();
+                        lector.Read();
+                        if (lector.GetValue(0).ToString() == txbLogPass.Text)
+                        {
+                            MessageBox.Show("Se ha iniciado sesión", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                            MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lector.Close();
                     }
-                    else
-                        MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception)
+                    {
 
-                    lector.Close();
+                        throw;
+                    }                    
                 }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                else
+                    MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool verifica(string user)
+        {
+            try
+            {
+                bool found = false;
+                query = new SqlCommand("SELECT Usuario FROM Trabajador", conexion);
+                lector = query.ExecuteReader();
+                while (lector.Read())
+                {
+                    if (txbLogUser.Text == lector.GetValue(0).ToString())
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                lector.Close();
+                return found;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

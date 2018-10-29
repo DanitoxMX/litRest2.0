@@ -64,6 +64,7 @@ namespace litRest
 
         private void refrescar()
         {
+            lsUsers.Items.Clear();
             try
             {
                 query = new SqlCommand("SELECT Usuario, Nombre, Puesto FROM Trabajador", conexion);
