@@ -7,16 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace litRest
 {
     public partial class inicio : UserControl
     {
         bool cocina, mesero, caja;
+        SqlConnection conexion;
+        SqlCommand query;
+        SqlDataReader lector;
+
         public inicio()
         {
             InitializeComponent();
             cocina = mesero = caja = false;
+            conexionSQL();
+        }
+
+        public void conexionSQL()
+        {
+            try
+            {
+                conexion = new SqlConnection("server=DANIEL-PC; database=litrest; integrated security=true");
+                conexion.Open();
+                Console.WriteLine("Conexión establecida con base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos");
+            }
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)
@@ -131,11 +151,25 @@ namespace litRest
             btnMesero();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            lblFecha.Text = DateTime.Now.ToString("ddd").ToUpper() + " - " + DateTime.Now.ToShortDateString() + " - " 
-                + DateTime.Now.ToString("hh:mm");
-         
+            
+            if(txbAdd.TextLength == 0)
+                MessageBox.Show("Rellena el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if (verifica(txbAdd.Text))
+                {
+                    if (lisMeseroAct.Items.Contains(txbAdd.Text))
+                        lisMeseroAct.Items.Remove(txbAdd.Text);
+                    else
+                        lisMeseroAct.Items.Add(txbAdd.Text);
+                }
+                else
+                    MessageBox.Show("El mesero no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void panel2_Click(object sender, EventArgs e)
@@ -146,6 +180,32 @@ namespace litRest
         private void panel3_Click(object sender, EventArgs e)
         {
             btnMesero();
+        }
+
+        private bool verifica(string user)
+        {
+            try
+            {
+                bool found = false;
+                query = new SqlCommand("SELECT Usuario FROM Trabajador WHERE Puesto = \'Mesero\'", conexion);
+                lector = query.ExecuteReader();
+                while (lector.Read())
+                {
+                    if (user == lector.GetValue(0).ToString())
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                lector.Close();
+                return found;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

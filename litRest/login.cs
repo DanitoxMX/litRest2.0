@@ -133,7 +133,10 @@ namespace litRest
                         lector.Read();
                         if (lector.GetValue(0).ToString() == txbLogPass.Text)
                         {
+                            Program.user = txbLogUser.Text;
+                            Program.pass = txbLogPass.Text;
                             MessageBox.Show("Se ha iniciado sesión", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                         }
                         else
                             MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);

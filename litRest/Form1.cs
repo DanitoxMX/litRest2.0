@@ -161,8 +161,11 @@ namespace litRest
             lblNavegador.Text = "Ajustes >";
         }
 
-        private void sobreCual()
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
+            lblFecha.Text = DateTime.Now.ToString("ddd").ToUpper() + " - " + DateTime.Now.ToShortDateString() + " - "
+                + DateTime.Now.ToString("hh:mm");
             
         }
     }

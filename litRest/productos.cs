@@ -16,6 +16,7 @@ namespace litRest
         SqlConnection conexion;
         SqlCommand query;
         SqlDataReader lector;
+        bool candado = false;
 
         public productos()
         {
@@ -134,21 +135,8 @@ namespace litRest
             }
             else
             {
-                float precio = Convert.ToInt16(txbPrecio1.Text) + (Convert.ToInt16(txbDec1.Text) / 100);
-                bool disp = false;
-
-                if (cbDispo1.Text == "Si")
-                    disp = true;
-                else
-                    disp = false;
-
-                query = new SqlCommand("INSERT INTO Producto(Producto, Precio, Disponible) VALUES (\'" + txbNombre1.Text + "\', " +
-                    "\'" + precio.ToString() + "\', \'" + disp + "\')", conexion);
-                lector = query.ExecuteReader();
-
-                lector.Close();
-                MessageBox.Show("Producto agregado correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                refresh();
+                panel1.Visible = true;
+                
             }
         }
 
@@ -200,6 +188,34 @@ namespace litRest
                 MessageBox.Show("Producto modificado correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 refresh();
             }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txbLogPass.Text == Program.pass)
+            {
+                float precio = Convert.ToInt16(txbPrecio1.Text) + (Convert.ToInt16(txbDec1.Text) / 100);
+                bool disp = false;
+
+                if (cbDispo1.Text == "Si")
+                    disp = true;
+                else
+                    disp = false;
+
+                query = new SqlCommand("INSERT INTO Producto(Producto, Precio, Disponible) VALUES (\'" + txbNombre1.Text + "\', " +
+                    "\'" + precio.ToString() + "\', \'" + disp + "\')", conexion);
+                lector = query.ExecuteReader();
+
+                lector.Close();
+                MessageBox.Show("Producto agregado correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                refresh();
+            }
+            else
+                MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            txbLogPass.Clear();
+            panel1.Visible = false;
         }
     }
 }

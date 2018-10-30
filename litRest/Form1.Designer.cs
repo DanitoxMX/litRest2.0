@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuVertical = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,8 @@
             this.lblNavegador = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.productos1 = new litRest.productos();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
@@ -58,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCursor)).BeginInit();
             this.barraTitulo.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuVertical
@@ -270,6 +271,7 @@
             // barraTitulo
             // 
             this.barraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.barraTitulo.Controls.Add(this.lblFecha);
             this.barraTitulo.Controls.Add(this.lblNavegador);
             this.barraTitulo.Controls.Add(this.label2);
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -306,21 +308,29 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Controls.Add(this.productos1);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 40);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1220, 660);
             this.panelContenedor.TabIndex = 2;
             // 
-            // productos1
+            // lblFecha
             // 
-            this.productos1.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productos1.Location = new System.Drawing.Point(-1, -5);
-            this.productos1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.productos1.Name = "productos1";
-            this.productos1.Size = new System.Drawing.Size(1220, 660);
-            this.productos1.TabIndex = 0;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Ubuntu", 20F);
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(13)))), ((int)(((byte)(69)))));
+            this.lblFecha.Location = new System.Drawing.Point(469, 7);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(87, 33);
+            this.lblFecha.TabIndex = 24;
+            this.lblFecha.Text = "Fecha";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -349,7 +359,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCursor)).EndInit();
             this.barraTitulo.ResumeLayout(false);
             this.barraTitulo.PerformLayout();
-            this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -374,7 +383,8 @@
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblNavegador;
         private System.Windows.Forms.PictureBox picCursor;
-        private productos productos1;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

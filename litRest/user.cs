@@ -47,17 +47,24 @@ namespace litRest
             }
             else
             {
-                if(txbPassword.Text == txbPassword2.Text)
+                if (verifica(txbUser.Text))
                 {
-                    query = new SqlCommand("INSERT INTO Trabajador(Usuario, pass, Nombre, Apellido, Puesto) VALUES (\'" + txbUser.Text + "\', \'" + txbPassword.Text + "\', " +
-                   "\'" + txbNombre.Text + "\', \'" + txbApellido.Text + "\', \'" + cbPuesto.Text + "\')", conexion);
-                    lector = query.ExecuteReader();
-                    MessageBox.Show("Datos insertados correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    lector.Close();
+                    MessageBox.Show("El usuario ya existe, elige otro", "Error al insertar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no son iguales", "Error al insertar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (txbPassword.Text == txbPassword2.Text)
+                    {
+                        query = new SqlCommand("INSERT INTO Trabajador(Usuario, pass, Nombre, Apellido, Puesto) VALUES (\'" + txbUser.Text + "\', \'" + txbPassword.Text + "\', " +
+                       "\'" + txbNombre.Text + "\', \'" + txbApellido.Text + "\', \'" + cbPuesto.Text + "\')", conexion);
+                        lector = query.ExecuteReader();
+                        MessageBox.Show("Datos insertados correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        lector.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas no son iguales", "Error al insertar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -91,6 +98,61 @@ namespace litRest
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             refrescar();
+        }
+
+        private void btnModificaUser_Click(object sender, EventArgs e)
+        {
+            if(txbIdProd.TextLength == 0)
+                MessageBox.Show("Rellena el campo", "Error al modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if (verifica(txbIdProd.Text))
+                {
+                    query = new SqlCommand("SELECT * FROM Trabajador WHERE Usuario = \'" + txbIdProd.Text
+                        + "\'", conexion);
+                    lector = query.ExecuteReader();
+                    lector.Read();
+                    txbNombre2.Text = lector.GetValue(3).ToString();
+                    txbApellido2.Text = lector.GetValue(4).ToString();
+                    txbUsuario2.Text = lector.GetValue(1).ToString();
+                    txbPass2.Text = lector.GetValue(2).ToString();
+                    txbPassC2.Text = lector.GetValue(2).ToString();
+                    cbPuesto2.Text = lector.GetValue(5).ToString();
+                }
+                else            
+                    MessageBox.Show("El usuario o la contraseña no son correctos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+            }
+        }
+
+        private bool verifica(string user)
+        {
+            try
+            {
+                bool found = false;
+                query = new SqlCommand("SELECT Usuario FROM Trabajador", conexion);
+                lector = query.ExecuteReader();
+                while (lector.Read())
+                {
+                    if (user == lector.GetValue(0).ToString())
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                lector.Close();
+                return found;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
