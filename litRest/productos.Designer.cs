@@ -556,6 +556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnNuevoPro);
             this.Controls.Add(this.btnModificaPro);
@@ -565,7 +566,6 @@
             this.Controls.Add(this.lsProduc);
             this.Controls.Add(this.pnlNuevo);
             this.Controls.Add(this.pnlModifica);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "productos";

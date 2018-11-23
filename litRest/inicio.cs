@@ -22,14 +22,14 @@ namespace litRest
         {
             InitializeComponent();
             cocina = mesero = caja = false;
-            conexionSQL();
+            //conexionSQL();
         }
 
         public void conexionSQL()
         {
             try
             {
-                conexion = new SqlConnection("server=DANIEL-PC; database=litrest; integrated security=true");
+                conexion = new SqlConnection("server=den1.mssql8.gear.host; database=litrest; user id=litrest; password=litrest_; initial catalog=litrest");
                 conexion.Open();
                 Console.WriteLine("Conexión establecida con base de datos");
             }

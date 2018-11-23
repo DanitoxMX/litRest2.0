@@ -19,6 +19,7 @@ namespace litRest
             InitializeComponent();
         }
         public static string nombre;
+
         
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -136,24 +137,48 @@ namespace litRest
         {
             lblNavegador.Text = "Inicio >";
             picCursor.Location = new Point(0, 131);
+            inicio1.Visible = true;
+            estadistica1.Visible = false;
+            productos1.Visible = false;
+            user1.Visible = false;
+            if (Program.iniciado)
+                login1.Visible = false;
         }
 
         private void btnEstadis_Click(object sender, EventArgs e)
         {
             lblNavegador.Text = "Estadisticas >";
             picCursor.Location = new Point(0, 230);
+            inicio1.Visible = false;
+            estadistica1.Visible = true;
+            productos1.Visible = false;
+            user1.Visible = false;
+            if (Program.iniciado)
+                login1.Visible = false;
         }
 
         private void btnProdu_Click(object sender, EventArgs e)
         {
             lblNavegador.Text = "Productos >";
             picCursor.Location = new Point(0, 329);
+            inicio1.Visible = false;
+            estadistica1.Visible = false;
+            productos1.Visible = true;
+            user1.Visible = false;
+            if (Program.iniciado)
+                login1.Visible = false;
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
             lblNavegador.Text = "Usuarios >";
             picCursor.Location = new Point(0, 420);
+            inicio1.Visible = false;
+            estadistica1.Visible = false;
+            productos1.Visible = false;
+            user1.Visible = true;
+            if (Program.iniciado)
+                login1.Visible = false;
         }
 
         private void btnAjustes_Click(object sender, EventArgs e)

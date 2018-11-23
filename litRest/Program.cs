@@ -14,7 +14,7 @@ namespace litRest
         /// </summary>
         public static string user;
         public static string pass;
-
+        public static bool iniciado = false;
         [STAThread]
         static void Main()
         {

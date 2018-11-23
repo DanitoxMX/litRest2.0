@@ -22,14 +22,14 @@ namespace litRest
         public login()
         {
             InitializeComponent();
-            conexionSQL();
+            //conexionSQL();
         }
 
         public void conexionSQL()
         {
             try
             {
-                conexion = new SqlConnection("server=DANIEL-PC; database=litrest; integrated security=true");
+                conexion = new SqlConnection("server=den1.mssql8.gear.host; database=litrest; user id=litrest; password=litrest_; initial catalog=litrest");
                 conexion.Open();
                 Console.WriteLine("Conexión establecida con base de datos");
             }
@@ -135,6 +135,8 @@ namespace litRest
                         {
                             Program.user = txbLogUser.Text;
                             Program.pass = txbLogPass.Text;
+                            Program.iniciado = true;
+                            this.Visible = false;
                             MessageBox.Show("Se ha iniciado sesión", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                         }
@@ -158,7 +160,7 @@ namespace litRest
             try
             {
                 bool found = false;
-                query = new SqlCommand("SELECT Usuario FROM Trabajador", conexion);
+                query = new SqlCommand("SELECT Usuario FROM Trabajador WHERE Puesto = \'Administrador\'", conexion);
                 lector = query.ExecuteReader();
                 while (lector.Read())
                 {
